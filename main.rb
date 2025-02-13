@@ -1,15 +1,10 @@
 class Todo
+  attr_reader :title
+  attr_writer :title #定義することでtodo=todo(value)のsetterを自動で定義
+
   def initialize(title)
     @title = title
     @tasks = []
-  end
-
-  def title
-   @title #WORK
-  end
-
-  def title=(value)
-    @title = value #@titleをHOME TODO→WORKに変更
   end
 
   def describe
@@ -25,7 +20,3 @@ end
 todo = Todo.new("HOME TODO")
 todo.title = "WORK" #def title=の呼び出し。引数"WORK"を渡す
 puts todo.title
-todo.add_task("洗濯")
-todo.add_task("掃除")
-todo.add_task("料理")
-todo.describe
