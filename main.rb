@@ -5,7 +5,11 @@ class Todo
   end
 
   def title
-    @title
+   @title #WORK
+  end
+
+  def title=(value)
+    @title = value #@titleをHOME TODO→WORKに変更
   end
 
   def describe
@@ -18,8 +22,10 @@ class Todo
 
 end
 
-todo_for_home = Todo.new("家庭用のTODO")
-todo_for_home.add_task("洗濯")
-todo_for_home.add_task("掃除")
-todo_for_home.add_task("料理")
-todo_for_home.describe
+todo = Todo.new("HOME TODO")
+todo.title = "WORK" #def title=の呼び出し。引数"WORK"を渡す
+puts todo.title
+todo.add_task("洗濯")
+todo.add_task("掃除")
+todo.add_task("料理")
+todo.describe
