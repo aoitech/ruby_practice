@@ -17,7 +17,7 @@ class Todo
 
   private
   def all_task_titles #クラスのメソッドの中でのみ使用するため、privateメソッド化（インスタンスでは使用しない)
-    "#{title} \n【タスク】\n#{tasks.join("、")}"
+    "#{self.title} \n【タスク】\n#{tasks.join("、")}"
   end
 end
 
