@@ -2,6 +2,12 @@ class Todo
   attr_accessor :title
   attr_accessor :tasks
 
+  def self.create(title, task)
+    todo = self.new(title)
+    todo.add_task(task)
+    todo
+  end
+
   def initialize(title)
     @title = title
     @tasks = []
@@ -21,9 +27,5 @@ class Todo
   end
 end
 
-todo = Todo.new("HOME TODO")
-todo.title = "WORK" #def title=の呼び出し。引数"WORK"を渡す
-todo.add_task("洗濯")
-todo.add_task("掃除")
-todo.add_task("料理")
+todo = Todo.create('WORK', 'Email')
 todo.describe
